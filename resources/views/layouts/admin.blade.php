@@ -18,8 +18,8 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ route('admin') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,10 +62,53 @@
             </div>
         </nav>
 
+        <div class="row">
+            <div class="col">
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+            <div class="flex-shrink-0 p-3" style="width:250px;">
+                    <?php
+                    $menu=array(
+                        "Home" => array(
+                            route('admin') => ["icon"=>"fas fa-tachometer-alt", "label"=>"Dashboard"],
+                        ),
+                        "Website" => array(
+                            route('home') => ["icon"=>"fas fa-home", "label"=>"Home"],
+                        ),
+                    );
+                    ?>
+                    <ul class="list-unstyled ps-0">
+                        @foreach($menu as $key=>$submenu)
+                                <li class="mb-1">
+                                <a class="btn btn-toggle align-items-center rounded @if(!array_key_exists(url()->current(), $submenu)) collapsed @endif" data-bs-toggle="collapse" data-bs-target="#{{ $key }}-collapse" aria-expanded="@if(array_key_exists(url()->current(), $submenu)) true @else false @endif">
+                                {{ $key }}
+                                </a>
+                                <div class="collapse @if(array_key_exists(url()->current(), $submenu)) show @endif" id="{{ $key }}-collapse">
+                                <ul class="nav nav-pills flex-column">
+                                    @foreach($submenu as $url=>$link)
+                                    <li class="nav-item">
+                                        <a class="nav-link @if(url()->current()==$url) bg-secondary text-white @endif" href="{{ $url }}"><i class="{{ $link['icon'] }} fa-fw"></i> 
+                                        <span class="nav-text">{{ $link['label'] }}</span>
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                </div>
+                                </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-9">
+                <main class="py-4">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
