@@ -10,11 +10,11 @@ Laravel Boilerplate is combination of following used almost every time
 
 Installation 
 
- git clone https://github.com/santoshkshirsagar/laravel-boilerplate
- cd laravel-boilerplate
- composer install
- cp .env.example .env
- php artisan key:generate
- php artisan serve
- add database details in .env
- php artisan migrate
+ - git clone https://github.com/santoshkshirsagar/laravel-boilerplate
+ - cd laravel-boilerplate
+ - composer install
+ - cp .env.example .env
+ - php artisan key:generate
+ - php artisan serve
+ - add database details in .env
+ - php artisan migrate
