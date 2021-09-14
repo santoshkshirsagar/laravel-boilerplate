@@ -7,6 +7,8 @@ Laravel Boilerplate is combination of following used almost every time
 - Laravel/ui with bootstrap 5.
 - Spatie/Permission for managing user roles/permissions.
 - Fontawesome with laravel mix.
+- Laravel Livewire.
+- Simple Admin UI.
 
 Installation 
 
@@ -15,6 +17,6 @@ Installation
  - composer install
  - cp .env.example .env
  - php artisan key:generate
- - php artisan serve
  - add database details in .env
  - php artisan migrate
+ - php artisan serve
