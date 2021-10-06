@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h2 class="text-center py-4">Register</h2>
+            <h2 class="text-center py-4">{{ __('Register') }}</h2>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

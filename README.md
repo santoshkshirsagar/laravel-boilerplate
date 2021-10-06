@@ -9,6 +9,7 @@ Laravel Boilerplate is combination of following used almost every time
 - Fontawesome with laravel mix.
 - Laravel Livewire.
 - Simple Admin UI.
+- Localisation.
 
 Installation 
 

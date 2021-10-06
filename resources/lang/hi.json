@@ -1,3 +1,13 @@
 {
-    "Welcome": "स्वागत"
+    "Welcome": "स्वागत",
+    "Login" : "लॉगिन",
+    "Register" : "रजिस्टर",
+    "Name" : "नाम",
+    "Confirm Password" : "पासवर्ड कन्फर्म करे ",
+    "E-Mail Address" : "ईमेल",
+    "Password" : "पासवर्ड",
+    "Remember Me" : "मुझे याद रखे",
+    "Forgot Your Password?" : "पासवर्ड भूल गए?",
+    "Reset Password" : "रिसेट पासवर्ड",
+    "Send Password Reset Link" : "रिसेट पासवर्ड लिंक भेजे?"
 }
