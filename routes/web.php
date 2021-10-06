@@ -24,3 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', function () {
     return view('admin.dashboard');
 })->name('admin');
+
+Route::get('/locale', function(){
+    session(['my_locale' => app('request')->input('locale')]);
+    return redirect()->back();
+})->name('locale');
