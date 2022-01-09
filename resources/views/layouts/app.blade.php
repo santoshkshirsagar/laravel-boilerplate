@@ -2,6 +2,18 @@
 
 @section('body')
     <div id="app">
+        <div class="py-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">Welcome to {{ config('app.name', 'Laravel') }}</div>
+                    <div class="col text-end">
+                        <div class="float-end">
+                        @livewire('locale.select')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -13,7 +25,6 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 </ul>
-                @livewire('locale.select')
                 <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                 </li>
@@ -51,8 +62,11 @@
         </nav>
 
 
-        <main class="py-4">
+        <main class="py-4" style="min-height:400px;">
             @yield('content')
         </main>
+        <div class="footer text-center border-top py-3">
+            &copy; Footer Links
+        </div>
     </div>
 @endsection
